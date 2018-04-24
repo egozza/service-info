@@ -1,0 +1,18 @@
+server:
+  port: 8090    #default port where the service will be started
+
+eureka:         #tells about the Eureka server details and its refresh time
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: https://server-register-service.herokuapp.com/eureka
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+
+spring:
+  application:
+    name: service-info   #current service name to be used by the eureka server
